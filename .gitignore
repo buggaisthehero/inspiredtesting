@@ -1,5 +1,5 @@
 /target/
-/omf/.DS_Store
-/omf/.classpath
-/omf/.project
 
+/.DS_Store
+/.project
+/.classpath
