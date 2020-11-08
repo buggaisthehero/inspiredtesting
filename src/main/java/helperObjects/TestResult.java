@@ -1,11 +1,11 @@
 package helperObjects;
 
-import java.util.Date;
 import org.joda.time.DateTime;
 import org.joda.time.Interval;
+import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
-public class TestResult
+public class TestResult extends TestBase
 {
     private Date date;
     private DateTime startTime;

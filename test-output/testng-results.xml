@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2020-11-08T12:36:10 SAST" name="Default suite" finished-at="2020-11-08T12:36:10 SAST" duration-ms="34">
+    <groups>
+    </groups>
+    <test started-at="2020-11-08T12:36:10 SAST" name="Default test" finished-at="2020-11-08T12:36:10 SAST" duration-ms="34">
+      <class name="omf.test.VerifyCapitalAndTermValues">
+        <test-method signature="exampleOfTestNgMaven_1()[pri:0, instance:omf.test.VerifyCapitalAndTermValues@482bce4f]" started-at="2020-11-08T12:36:10 SAST" name="exampleOfTestNgMaven_1" finished-at="2020-11-08T12:36:10 SAST" duration-ms="6" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- exampleOfTestNgMaven_1 -->
+        <test-method signature="exampleOfTestNgMaven_2()[pri:0, instance:omf.test.VerifyCapitalAndTermValues@482bce4f]" started-at="2020-11-08T12:36:10 SAST" name="exampleOfTestNgMaven_2" finished-at="2020-11-08T12:36:10 SAST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- exampleOfTestNgMaven_2 -->
+        <test-method signature="exampleOfTestNgMaven_3()[pri:0, instance:omf.test.VerifyCapitalAndTermValues@482bce4f]" started-at="2020-11-08T12:36:10 SAST" name="exampleOfTestNgMaven_3" finished-at="2020-11-08T12:36:10 SAST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- exampleOfTestNgMaven_3 -->
+      </class> <!-- omf.test.VerifyCapitalAndTermValues -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
