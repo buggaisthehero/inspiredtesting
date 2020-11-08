@@ -73,13 +73,13 @@ public class TestBase
 		}
 	}
 	
-	public static void setupTest(String testName)
+	public static void setupTest()
 	{
 		try
 		{
 			  	//Start new test
 			    testData = new TestData();
-			    testData = getTestData(testName);
+//			    testData = getTestData(testName);
 			    
 		        testResult = new TestResult();
 				testResult.startTime();

@@ -2,6 +2,7 @@ package omf.test;
 import org.testng.annotations.*;
 
 import enummerables.Enums.BrowserTypes;
+import helperObjects.Logging;
 import helperObjects.TestBase;
 import helperObjects.TestData;
 import pageObjects.HomePage;
@@ -9,11 +10,16 @@ import pageObjects.PersonalLoans;
 
 public class VerifyCapitalAndTermValues extends TestBase {
 	
+	@BeforeClass
+	public void before_class()  
+	{  
+		Logging logging = new Logging();
+	}
 	
 	@BeforeTest                                          
 	public void before_test()  
 	{  
-// 	  TestBase.setupTest("AddiLabUser");
+ 	  TestBase.setupTest();
 	}
 	  
     @Test

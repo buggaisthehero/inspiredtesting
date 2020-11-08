@@ -3,7 +3,6 @@ package utilities;
 import enummerables.Enums.*;
 import helperObjects.Logging;
 
-
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -12,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
-public final class AppConfig
+public final class AppConfig 
 {
 	Logging logger;
 	public Properties properties = new Properties();
@@ -21,7 +20,7 @@ public final class AppConfig
     private String username, password;
     private String ReportFileDirectory;
     
-    private File appConfig = new File("src//config.properties");
+    private File appConfig = new File("config.properties");
 
     private int waitTimeout;
     private List<BrowserTypes> browserTypes;

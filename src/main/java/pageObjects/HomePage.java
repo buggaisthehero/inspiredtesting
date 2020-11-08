@@ -2,8 +2,6 @@ package pageObjects;
 
 import java.util.concurrent.TimeoutException;
 
-import org.openqa.selenium.ElementNotVisibleException;
-
 import helperObjects.TestBase;
 import utilities.SeleniumDriver;
 
