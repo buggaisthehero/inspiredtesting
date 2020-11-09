@@ -17,6 +17,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.Select;
 
 public class SeleniumDriver extends TestBase
@@ -46,6 +47,7 @@ public class SeleniumDriver extends TestBase
        
     }
 
+	@SuppressWarnings("deprecation")
 	public boolean startWebDriver(BrowserTypes browserType)
     {
             switch (browserType) 
@@ -58,7 +60,9 @@ public class SeleniumDriver extends TestBase
 	            }
                 case FireFox: 
                 {
-                    SeleniumDriver.webDriver = new FirefoxDriver();
+                    DesiredCapabilities cap = DesiredCapabilities.firefox();
+                    cap.setCapability("marionette", true);
+                    SeleniumDriver.webDriver = new FirefoxDriver(cap);
                     this.browserStarted = true;
                     break;
                 }

@@ -48,8 +48,8 @@ public class VerifyCapitalAndTermValues extends TestBase {
 	 	  homePage.clickPersonalLoansViewButton();
 	 	  PersonalLoans.verifyCapitalAndTermValues();
 	 	  Assert.assertEquals(PersonalLoans.getMinLoanPayment(), "R1,521.05");
-//	 	  Assert.assertEquals(PersonalLoans.getMaxLoanPayment(), "R1,600.42");
-//	 	  screenshot.takeSnapShot(SeleniumDriver.GetWebDriver(), "screenshots//PersonalLoans.png"); 
+	 	  Assert.assertEquals(PersonalLoans.getMaxLoanPayment(), "R1,600.42");
+	 	  screenshot.takeSnapShot(SeleniumDriver.GetWebDriver(), "screenshots//PersonalLoans.png"); 
 	 	  
 	 	  testResult.setStatus(true);
 	 	 	

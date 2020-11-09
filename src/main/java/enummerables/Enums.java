@@ -20,7 +20,7 @@ public class Enums
     public enum BrowserTypes
     { 
     	Chrome(3,new String[]{"58"}),
-    	FireFox (2, new String[]{"81.0"});
+    	FireFox (2, new String[]{"71.0"});
         
 
         private final int position;
