@@ -81,6 +81,7 @@ public class SeleniumDriver extends TestBase
         try
         {
             webDriver.navigate().to(url); 
+            
             logger.printLog(LoggingType.INFO,"NavigateToPage (" + url + ")");
             
             return true;
@@ -335,6 +336,30 @@ public class SeleniumDriver extends TestBase
     	}
     }
 
+    public String returnTextFromElement(LocatorType locatorType, String value) 
+    		throws ElementNotVisibleException, Exception
+    {
+        try
+        {
+            By locator = LocatorValue(locatorType, value);
+            WebElement element = webDriver.findElement(locator);
+            
+            logger.printLog(LoggingType.INFO,"returnTextFromElement(" + value + ")");
+            return element.getText();
+        }
+
+        catch(ElementNotVisibleException e)
+        {
+        	logger.printLog(LoggingType.ERROR,"Element not visible: " + value);
+            return "";
+        }
+        catch(Exception e)
+        {
+        	logger.printLog(LoggingType.ERROR,"Unable to return text from element (" + value + ") \n" + e.getMessage());
+            return "";
+        }
+    }
+    
     public static void closeBrowser() 
     {
     	if(webDriver != null)

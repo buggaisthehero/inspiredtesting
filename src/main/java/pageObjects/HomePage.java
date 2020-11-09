@@ -12,9 +12,9 @@ public class HomePage extends TestBase {
     	super(seleniumDriver);
     }
     
-    public static String personalLoansVewButtonCss()
+    public static String personalLoansVewButtonXpath()
     {
-    	return "a[href='personal-loans']";
+    	return "//a[text()='Personal Loans']";
     }
     
     public static String getLandingPageTitle()
@@ -22,7 +22,7 @@ public class HomePage extends TestBase {
     	return SeleniumDriver.getPageTitle();
     }
     
-	public HomePage navigateToHomePage(String url) throws TimeoutException
+	public HomePage navigateToHomePage(String url) throws Exception
 	{
 		seleniumDriver.navigateToPage(url);
 		
@@ -31,7 +31,7 @@ public class HomePage extends TestBase {
     
     public boolean clickPersonalLoansViewButton() throws Exception
     {
-    	return SeleniumDriver.clickElementByCssSelector(personalLoansVewButtonCss());
+    	return SeleniumDriver.clickElementByXpath(personalLoansVewButtonXpath());
     }
 
 }
