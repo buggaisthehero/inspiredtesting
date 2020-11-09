@@ -87,7 +87,7 @@ public final class AppConfig
         try
         {
         	//Get properties from configuration file
-        	UsersInputFile = properties.getProperty("UsersInputFile");
+        	UsersInputFile = properties.getProperty("InputFile");
             ReportFileDirectory = properties.getProperty("ReportFileDirectory"); 
             username = properties.getProperty("Username"); 
             password = properties.getProperty("Password"); 
@@ -134,7 +134,7 @@ public final class AppConfig
 		         case "CHROME":
 		             browsers.add(BrowserTypes.Chrome);
 		             break;
-		         case "FireFox":
+		         case "FIREFOX":
 		        	 browsers.add(BrowserTypes.FireFox);
 		             break;
 		         default: 

@@ -61,7 +61,6 @@ public class PersonalLoans extends TestBase {
 		SeleniumDriver.clickElementByXpath(ViewBreakdownStructureCalculatorLinkXpath());
 		seleniumDriver.Pause(2000);
 		
-		
 		return new PersonalLoans(seleniumDriver);
 	}
 	

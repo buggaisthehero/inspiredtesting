@@ -41,7 +41,6 @@ public class SeleniumDriver extends TestBase
     			System.setProperty("webdriver.gecko.driver", this.browserDriverFile.getAbsolutePath());
     			break;
     		default:
-
     	}
     	
        
@@ -63,6 +62,7 @@ public class SeleniumDriver extends TestBase
                     this.browserStarted = true;
                     break;
                 }
+                default:
 
             }
 

@@ -58,7 +58,7 @@ public class TestBase
         			seleniumDriver.startWebDriver(browserType);
         			break;
         		case FireFox:
-        			seleniumDriver = new SeleniumDriver("", browserType);
+        			seleniumDriver = new SeleniumDriver("dependencies//geckodriver", browserType);
         			seleniumDriver.startWebDriver(browserType);
 
         			break;
