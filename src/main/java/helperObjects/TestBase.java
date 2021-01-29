@@ -54,7 +54,7 @@ public class TestBase
         	switch(browserType)
         	{
         		case Chrome:
-        			seleniumDriver = new SeleniumDriver("dependencies//chromedriver", browserType);
+        			seleniumDriver = new SeleniumDriver("dependencies/chromedriver.exe", browserType);
         			seleniumDriver.startWebDriver(browserType);
         			break;
         		case FireFox:
