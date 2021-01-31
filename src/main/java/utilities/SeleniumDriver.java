@@ -139,7 +139,7 @@ public class SeleniumDriver extends TestBase
         }
     }   
 
-    public boolean enterText(LocatorType locatorType, String value, String text) 		
+    public static boolean enterText(LocatorType locatorType, String value, String text) 		
     		throws ElementNotVisibleException, Exception
     {
         try 
@@ -166,7 +166,7 @@ public class SeleniumDriver extends TestBase
     }
     
     
-    public boolean selectOption(LocatorType locatorType, String value, String text) 
+    public static boolean selectOption(LocatorType locatorType, String value, String text) 
     		throws ElementNotVisibleException, Exception
     {
         try
@@ -257,7 +257,7 @@ public class SeleniumDriver extends TestBase
         }
     }
 
-    public By LocatorValue(LocatorType locatorType, String value) 
+    public static By LocatorValue(LocatorType locatorType, String value) 
     {
         By by;
         switch (locatorType) 

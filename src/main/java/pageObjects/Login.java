@@ -1,5 +1,6 @@
 package pageObjects;
 
+import enummerables.Enums.LocatorType;
 import helperObjects.TestBase;
 import utilities.SeleniumDriver;
 
@@ -22,7 +23,7 @@ public class Login extends TestBase{
     
 	public static Login loginCustomer() throws Exception
 	{
-		SeleniumDriver.clickElementByXpath(customerListXpath());
+		SeleniumDriver.selectOption(LocatorType.XPATH, customerListXpath(), "Harry Potter");
 		SeleniumDriver.clickElementByXpath(loginButtonXpath());
 		 
 		return new Login(seleniumDriver);
