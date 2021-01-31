@@ -6,24 +6,24 @@ import utilities.SeleniumDriver;
 
 public class Login extends TestBase{
 	
-    public Login(SeleniumDriver seleniumDriver) 
+	private Login(SeleniumDriver seleniumDriver) 
     {
     	super(seleniumDriver);
     }
     
-    public static String customerListXpath()
+	private static String customerDropDownXpath()
     {
     	return "//select[@name=\"userSelect\"]";
     }
     
-    public static String loginButtonXpath()
+	private static String loginButtonXpath()
     {
     	return "//button[@class=\"btn btn-default\"]";
     }
     
 	public static Login loginCustomer() throws Exception
 	{
-		SeleniumDriver.selectOption(LocatorType.XPATH, customerListXpath(), "Harry Potter");
+		SeleniumDriver.selectOption(LocatorType.XPATH, customerDropDownXpath(), "Harry Potter");
 		SeleniumDriver.clickElementByXpath(loginButtonXpath());
 		 
 		return new Login(seleniumDriver);

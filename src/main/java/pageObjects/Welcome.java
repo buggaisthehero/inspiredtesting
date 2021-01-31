@@ -6,35 +6,39 @@ import utilities.SeleniumDriver;
 
 public class Welcome extends TestBase{
 
-	public Welcome(SeleniumDriver seleniumDriver) 
+	private Welcome(SeleniumDriver seleniumDriver) 
     {
     	super(seleniumDriver);
     }
 	
-    public static String transactionButtonXpath()
+	private static String accountsDropDownXpath()
+	{
+		return "//select[@id=\"accountSelect\"]//option";
+	}
+	private static String transactionButtonXpath()
     {
     	return "//button[@ng-click=\"transactions()\"]";
     }
-    public static String depositeButtonXpath()
+	private static String depositeButtonXpath()
     {
     	return "//button[@ng-click=\"deposit()\"]";
     }
-    public static String withdrawlButtonXpath()
+	private static String withdrawlButtonXpath()
     {
     	return "//button[@ng-click=\"withdrawl()\"]";
     }
-    
-    public static String amountTextboxXpath()
+   
+	private static String amountTextboxXpath()
     {
     	return "//input[@type=\"number\"]";
     }
     
-    public static String submitButtonXpath()
+	private static String submitButtonXpath()
     {
     	return "//button[@type=\"submit\"]";
     }
     
-    public static String messageStatusXpath()
+	private static String messageStatusXpath()
     {
     	return "//span[@class=\"error ng-binding\"]";
     }
@@ -58,8 +62,9 @@ public class Welcome extends TestBase{
 		return new Welcome(seleniumDriver);
 	}
     
-//    public static Welcome getStatus() throws Exception
-//    {
-//    	
-//    }
+    public static String getMessageStatus() throws Exception
+    {
+    	String text = SeleniumDriver.getTextFromElement(LocatorType.XPATH, messageStatusXpath());
+    	return text;
+    }
 }

@@ -51,9 +51,9 @@ public class CustomerActions extends TestBase {
 	 	  homePage.clickCustomerLoginButton();
 	 	  login.loginCustomer();
 	 	  welcome.deposit("1500");
-//	 	  String message = welcome
-	 	  Assert.assertEquals(originalTitle, "Transaction successful");
-	 	  screenshot.takeSnapShot(SeleniumDriver.GetWebDriver(), "screenshots//deposit.png"); 
+	 	  String message = welcome.getMessageStatus();
+	 	  screenshot.takeSnapShot(SeleniumDriver.GetWebDriver(), "screenshots//deposit.png");
+	 	  Assert.assertEquals(message, "Deposit Successful");
 	 	  
 	 	  testResult.setStatus(true);
 	 	 	
@@ -84,9 +84,9 @@ public class CustomerActions extends TestBase {
 	 	  homePage.clickCustomerLoginButton();
 	 	  login.loginCustomer();
 	 	  welcome.withdrawl("1500");
-
+	 	  String message = welcome.getMessageStatus();
 	 	  screenshot.takeSnapShot(SeleniumDriver.GetWebDriver(), "screenshots//withdrawl.png"); 
-	 	  
+	 	  Assert.assertEquals(message, "Withdrawl successful");
 	 	  testResult.setStatus(true);
 	 	 	
   		}
@@ -96,8 +96,14 @@ public class CustomerActions extends TestBase {
 	  public void after_test()  
 	  { 
  		TestBase.endTest();
- 		TestBase.closeBrowser();
+ 		
 	  }
+    
+    @AfterClass
+    public void after_class()
+    {
+    	TestBase.closeBrowser();
+    }
     
 
 }

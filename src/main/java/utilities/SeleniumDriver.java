@@ -139,6 +139,18 @@ public class SeleniumDriver extends TestBase
         }
     }   
 
+    public static String getTextFromElement(LocatorType locatorType, String value) 
+    		throws ElementNotVisibleException, Exception
+    {
+    	
+        By locator = LocatorValue(locatorType, value);
+        WebElement element = webDriver.findElement(locator);
+
+        String text = element.getText();
+        return text;
+    }   
+
+    
     public static boolean enterText(LocatorType locatorType, String value, String text) 		
     		throws ElementNotVisibleException, Exception
     {
