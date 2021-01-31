@@ -1,6 +1,7 @@
 package utilities;
 
 import java.io.File;
+import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
@@ -205,6 +206,25 @@ public class SeleniumDriver extends TestBase
         }
     }
     
+    public static int getDropDownSize(LocatorType locatorType, String value) 
+    		throws ElementNotVisibleException, Exception
+    {
+        try
+        {
+        	int size = 0;
+        	By locator = LocatorValue(locatorType, value);
+            List<WebElement> element = webDriver.findElements(locator);
+            size = element.size();
+            logger.printLog(LoggingType.INFO,"getDropDownSize(" + size + ")");
+            return size;
+        }
+        catch(ElementNotVisibleException e)
+        {
+        	logger.printLog(LoggingType.ERROR,"Element not visible: " + value);
+            return 0;
+        }
+    }
+
     public static boolean clickElementByCssSelector(String cssSelector) 
     		throws ElementNotVisibleException, Exception
     {

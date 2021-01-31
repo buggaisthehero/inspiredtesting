@@ -1,12 +1,14 @@
 package pageObjects;
 
+import org.openqa.selenium.ElementNotVisibleException;
+
 import enummerables.Enums.LocatorType;
 import helperObjects.TestBase;
 import utilities.SeleniumDriver;
 
 public class Welcome extends TestBase{
 
-	private Welcome(SeleniumDriver seleniumDriver) 
+	public Welcome(SeleniumDriver seleniumDriver) 
     {
     	super(seleniumDriver);
     }
@@ -15,6 +17,12 @@ public class Welcome extends TestBase{
 	{
 		return "//select[@id=\"accountSelect\"]//option";
 	}
+	
+	private static String accountBalanceXpath()
+    {
+    	return "//div[@ng-hide=\"noAccount\"][1]//strong[2]";
+    }
+	
 	private static String transactionButtonXpath()
     {
     	return "//button[@ng-click=\"transactions()\"]";
@@ -42,10 +50,18 @@ public class Welcome extends TestBase{
     {
     	return "//span[@class=\"error ng-binding\"]";
     }
-  
-    
-    public static Welcome deposit(String amount) throws Exception
+	
+
+	public static int getDropDownSize() throws ElementNotVisibleException, Exception
 	{
+		int length = SeleniumDriver.getDropDownSize(LocatorType.XPATH, accountsDropDownXpath());
+		
+		return length;
+	}
+    
+    public static Welcome deposit(String amount, String accountNum) throws Exception
+	{
+    	SeleniumDriver.clickElementByXpath(accountsDropDownXpath() + "//["+ accountNum +"]");
     	SeleniumDriver.clickElementByXpath(depositeButtonXpath());
 		SeleniumDriver.enterText(LocatorType.XPATH, amountTextboxXpath(), amount);
 		SeleniumDriver.clickElementByXpath(submitButtonXpath());
@@ -53,8 +69,9 @@ public class Welcome extends TestBase{
 		return new Welcome(seleniumDriver);
 	}
     
-    public static Welcome withdrawl(String amount) throws Exception
+    public static Welcome withdrawl(String amount, String accountNum) throws Exception
 	{
+    	SeleniumDriver.clickElementByXpath(accountsDropDownXpath() + "//["+ accountNum +"]");
     	SeleniumDriver.clickElementByXpath(withdrawlButtonXpath());
 		SeleniumDriver.enterText(LocatorType.XPATH, amountTextboxXpath(), amount);
 		SeleniumDriver.clickElementByXpath(submitButtonXpath());
@@ -65,6 +82,12 @@ public class Welcome extends TestBase{
     public static String getMessageStatus() throws Exception
     {
     	String text = SeleniumDriver.getTextFromElement(LocatorType.XPATH, messageStatusXpath());
+    	return text;
+    }
+    
+    public static String getAccountBalance() throws Exception
+    {
+    	String text = SeleniumDriver.getTextFromElement(LocatorType.XPATH, accountBalanceXpath());
     	return text;
     }
 }

@@ -6,7 +6,7 @@ import utilities.SeleniumDriver;
 
 public class Login extends TestBase{
 	
-	private Login(SeleniumDriver seleniumDriver) 
+	public Login(SeleniumDriver seleniumDriver) 
     {
     	super(seleniumDriver);
     }
