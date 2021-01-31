@@ -90,4 +90,10 @@ public class Welcome extends TestBase{
     	String text = SeleniumDriver.getTextFromElement(LocatorType.XPATH, accountBalanceXpath());
     	return text;
     }
+    
+    public static Welcome viewTransactions() throws Exception
+	{
+		SeleniumDriver.clickElementByXpath(transactionButtonXpath());
+		return new Welcome(seleniumDriver);
+	}
 }

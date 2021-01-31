@@ -6,6 +6,7 @@ import helperObjects.Logging;
 import helperObjects.TestBase;
 import pageObjects.HomePage;
 import pageObjects.Login;
+import pageObjects.Transactions;
 import pageObjects.Welcome;
 import utilities.Screenshot;
 import utilities.SeleniumDriver;
@@ -17,6 +18,7 @@ public class CustomerActions extends TestBase {
 	HomePage homePage = new HomePage(seleniumDriver);
 	Login login = new Login(seleniumDriver);
 	Welcome welcome = new Welcome(seleniumDriver);
+	Transactions transactions = new Transactions(seleniumDriver);
 	Timestamp timestamp = new Timestamp(System.currentTimeMillis());
 
 	    
@@ -33,7 +35,7 @@ public class CustomerActions extends TestBase {
 	}
 	  
     @SuppressWarnings("static-access")
-	@Test
+	@Test(enabled=false)
     public void testDepositFirstAccount() throws Exception 
     {
 
@@ -64,7 +66,7 @@ public class CustomerActions extends TestBase {
     }
     
     @SuppressWarnings("static-access")
-	@Test
+	@Test(enabled=false)
     public void testDepositAllAcounts() throws Exception 
     {
     	Screenshot screenshot = new Screenshot();
@@ -115,21 +117,38 @@ public class CustomerActions extends TestBase {
          
 	 	  homePage.clickCustomerLoginButton();
 	 	  login.loginCustomer();
-	 	  String accBalanceStr = welcome.getAccountBalance();
-	 	  int accBalanceInt = Integer.parseInt(accBalanceStr);
+	 	  String oldAccBalanceStr = welcome.getAccountBalance();
+	 	  int accBalanceInt = Integer.parseInt(oldAccBalanceStr);
 	 	  welcome.deposit("31459", "1");
 	 	  String message = welcome.getMessageStatus();
 	 	  screenshot.takeSnapShot(SeleniumDriver.GetWebDriver(), "screenshots//deposit_"+timestamp.getTime()+"_.png");
 	 	  Assert.assertEquals(message, "Deposit Successful");
-	 	  
 	 	  int newAccBalance = accBalanceInt + 31459;
-	 	  
-	 	  
-	 	  
-	 	  
-	 	  
-	 	  
-	 	  
+	 	 
+	 	  welcome.viewTransactions();
+	 	  transactions.sortByDate();
+	 	  String date = transactions.getDateTime();
+	 	  String amount = transactions.getAmount();
+	 	  String transactionType = transactions.getTransactionType();
+	 	 
+	 	  Assert.assertEquals(31459, Integer.parseInt(amount));
+	 	  Assert.assertEquals(transactionType, "Credit");
+	 	 
+	 	  transactions.goBack();
+	 	  oldAccBalanceStr = welcome.getAccountBalance();
+	 	  accBalanceInt = Integer.parseInt(oldAccBalanceStr);
+	 	  welcome.withdrawl("31459", "1");
+	 	  message = welcome.getMessageStatus();
+	 	  screenshot.takeSnapShot(SeleniumDriver.GetWebDriver(), "screenshots//deposit_"+timestamp.getTime()+"_.png");
+	 	  Assert.assertEquals(message, "Transaction successful");
+	 	  welcome.viewTransactions();
+	 	  transactions.sortByDate();
+	 	  date = transactions.getDateTime();
+	 	  amount = transactions.getAmount();
+	 	  transactionType = transactions.getTransactionType();
+	 	  newAccBalance = newAccBalance - 31459;
+	 	  Assert.assertEquals(31459, Integer.parseInt(amount));
+	 	  Assert.assertEquals(transactionType, "Debit");
 	 	  testResult.setStatus(true);
 	 	 	
   		}

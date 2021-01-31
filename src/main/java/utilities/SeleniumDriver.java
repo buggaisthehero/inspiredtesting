@@ -342,7 +342,7 @@ public class SeleniumDriver extends TestBase
             
     }
     
-    public void Pause(int milliseconds)
+    public static void Pause(int milliseconds)
     {
         try
         {

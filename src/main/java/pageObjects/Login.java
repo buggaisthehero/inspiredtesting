@@ -23,7 +23,7 @@ public class Login extends TestBase{
     
 	public static Login loginCustomer() throws Exception
 	{
-		SeleniumDriver.selectOption(LocatorType.XPATH, customerDropDownXpath(), "Harry Potter");
+		SeleniumDriver.selectOption(LocatorType.XPATH, customerDropDownXpath(), "Hermoine Granger");
 		SeleniumDriver.clickElementByXpath(loginButtonXpath());
 		 
 		return new Login(seleniumDriver);
