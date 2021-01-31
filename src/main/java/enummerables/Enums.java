@@ -69,7 +69,7 @@ public class Enums
     {
         Dev("Dev URL"),
         QA("QA URL"),
-        Prod("https://www.oldmutualfinance.co.za/");
+        Prod("http://www.way2automation.com/angularjs-protractor/banking/#/login/");
         
         public final String urlUnderTest;
 

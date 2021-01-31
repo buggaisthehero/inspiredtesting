@@ -1,7 +1,5 @@
 package pageObjects;
 
-import java.util.concurrent.TimeoutException;
-
 import helperObjects.TestBase;
 import utilities.SeleniumDriver;
 
@@ -12,9 +10,9 @@ public class HomePage extends TestBase {
     	super(seleniumDriver);
     }
     
-    public static String personalLoansVewButtonXpath()
+    public static String customerLoginButtonXpath()
     {
-    	return "//a[text()='Personal Loans']";
+    	return "//button[text()=\"Customer Login\"]";
     }
     
     public static String getLandingPageTitle()
@@ -29,9 +27,9 @@ public class HomePage extends TestBase {
 		return new HomePage(seleniumDriver);
 	}
     
-    public boolean clickPersonalLoansViewButton() throws Exception
+    public boolean clickCustomerLoginButton() throws Exception
     {
-    	return SeleniumDriver.clickElementByXpath(personalLoansVewButtonXpath());
+    	return SeleniumDriver.clickElementByXpath(customerLoginButtonXpath());
     }
 
 }
