@@ -398,8 +398,9 @@ public class SeleniumDriver extends TestBase
     
     public static void closeBrowser() 
     {
-    	if(webDriver != null)
-            webDriver.quit();
+    	if(webDriver != null) {
+    		webDriver.quit();
+    	}
     	else
     		logger.printLog(LoggingType.INFO, "The web driver has not been initialised.");
     }  

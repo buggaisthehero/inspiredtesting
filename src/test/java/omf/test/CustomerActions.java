@@ -1,11 +1,8 @@
 package omf.test;
 import org.testng.annotations.*;
 
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.sql.Timestamp;
-import java.util.Iterator;
-
 import enummerables.Enums.BrowserTypes;
 import helperObjects.Logging;
 import helperObjects.TestBase;
@@ -15,11 +12,8 @@ import pageObjects.Transactions;
 import pageObjects.Welcome;
 import utilities.Screenshot;
 import utilities.SeleniumDriver;
-
-import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
-import org.json.simple.parser.ParseException;
 
 import org.testng.Assert;
 
@@ -31,8 +25,6 @@ public class CustomerActions extends TestBase {
 	Transactions transactions = new Transactions(seleniumDriver);
 	Timestamp timestamp = new Timestamp(System.currentTimeMillis());
 	Screenshot screenshot = new Screenshot();
-
-
 	    
 	@BeforeClass
 	public void before_class()  
@@ -75,7 +67,7 @@ public class CustomerActions extends TestBase {
     }
     
     @SuppressWarnings("static-access")
-	@Test
+	@Test(enabled=false)
     public void testDepositAllAcounts() throws Exception 
     {
     	String homePageTitle = "Protractor practice website - Banking App";
@@ -106,7 +98,7 @@ public class CustomerActions extends TestBase {
     }
     
     @SuppressWarnings("static-access")
-	@Test
+	@Test(enabled=false)
     public void testDepositAndWithdrawl() throws Exception 
     {
     	String homePageTitle = "Protractor practice website - Banking App";
@@ -160,7 +152,7 @@ public class CustomerActions extends TestBase {
     }
     
     @SuppressWarnings("static-access")
-	@Test
+	@Test(enabled=false)
     public void testDepositAndWithdrawlJSON() throws Exception 
     {
         try
@@ -196,7 +188,6 @@ public class CustomerActions extends TestBase {
 			 	 
 			 	  welcome.viewTransactions();
 			 	  transactions.sortByDate();
-//			 	  String date = transactions.getDateTime();
 			 	  String amount = transactions.getAmount();
 			 	  String transactionType = transactions.getTransactionType();
 			 	 
@@ -212,7 +203,6 @@ public class CustomerActions extends TestBase {
 			 	  Assert.assertEquals(message, "Transaction successful");
 			 	  welcome.viewTransactions();
 			 	  transactions.sortByDate();
-//			 	  date = transactions.getDateTime();
 			 	  amount = transactions.getAmount();
 			 	  transactionType = transactions.getTransactionType();
 			 	  newAccBalance = newAccBalance - 31459;

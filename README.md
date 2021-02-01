@@ -23,8 +23,7 @@ Browsers Installed on machine
 	Dependencies (libraries/drivers) are in the "dependencies" folder and in the POM Maven file.
 
 How to run the tests:
-Assuming you are using eclipse and after setting up the project which should not be much as all dependencies have been included. Right click on the testng.xml file that is at the very bottom of the project explorer window on your left hand side. Hover over "Run as", then click "1 TestNG Suite", both suites should now run on your side.
-
+Assuming you are using eclipse and after setting up the project which should not be much as all dependencies have been included. Right click on the testng.xml file that is at the very bottom of the project explorer window on your left hand side. Hover over "Run as", then click "1 TestNG Suite", both suites should now run on your side. After executing the tests you will get the reports in the "test-output" folder and screenshots in the "screenshots" folder.
 For any other information I can be contacted at the details below:
 	Cell: 0650900470
 	Email: sinethembaq@yahoo.com
