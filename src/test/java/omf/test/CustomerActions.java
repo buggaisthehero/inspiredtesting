@@ -67,7 +67,7 @@ public class CustomerActions extends TestBase {
     }
     
     @SuppressWarnings("static-access")
-	@Test(enabled=false)
+	@Test
     public void testDepositAllAcounts() throws Exception 
     {
     	String homePageTitle = "Protractor practice website - Banking App";
@@ -98,7 +98,7 @@ public class CustomerActions extends TestBase {
     }
     
     @SuppressWarnings("static-access")
-	@Test(enabled=false)
+	@Test
     public void testDepositAndWithdrawl() throws Exception 
     {
     	String homePageTitle = "Protractor practice website - Banking App";
@@ -152,7 +152,7 @@ public class CustomerActions extends TestBase {
     }
     
     @SuppressWarnings("static-access")
-	@Test(enabled=false)
+	@Test
     public void testDepositAndWithdrawlJSON() throws Exception 
     {
         try
