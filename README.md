@@ -1,9 +1,9 @@
 WebGUI assignment
 
-These solutions are based on the Inspired Testing – QA Automaon Assessment which instructed me to test the functionality of Way2Automate's website (http://www.way2automation.com/angularjs-protractor/banking/#/login) and API Rest Service testing on (https://jsonplaceholder.typicode.com/).
+These solutions are based on the Inspired Testing – QA Automation Assessment which instructed me to test the functionality of Way2Automate's website (http://www.way2automation.com/angularjs-protractor/banking/#/login) and API Rest Service testing on (https://jsonplaceholder.typicode.com/).
 
 I created both solutions using eclipse version: 2020-12 (4.18.0), build id: 20201210-1552 in a single project. I have used Maven and Testng-7.3.0 as my underlying test automation frameworks and or test build tools.
-I have opted to do a Java / Selenium  based project for Web testing and for API testing I used Java / RestAssured (library). You will find the web automation test scripts in "/inspiredtesting/src/test/java/omf/test/CustomerActions.java" and the API test scripts in "/inspiredtesting/src/test/java/omf/test/API.java". I have also used, Enumerables, helperObjects, pageObjects, Utilities which you will see in the project structure as well.
+I have opted to do a Java / Selenium  based project for Web testing and for API testing I used Java / RestAssured (library). You will find the web automation test scripts in "/inspiredtesting/src/test/java/omf/test/CustomerActions.java" and the API test scripts in "/inspiredtesting/src/test/java/omf/test/API.java". I have also used, enumerables, helperObjects, pageObjects, Utilities which you will see in the project structure as well.
 
 Below you will see some of the major softwares with their respective versions that I have used and which you will need in order to successfully execute the test scripts:
 
