@@ -21,9 +21,9 @@ public class Login extends TestBase{
     	return "//button[@class=\"btn btn-default\"]";
     }
     
-	public static Login loginCustomer() throws Exception
+	public static Login loginCustomer(String customerName) throws Exception
 	{
-		SeleniumDriver.selectOption(LocatorType.XPATH, customerDropDownXpath(), "Hermoine Granger");
+		SeleniumDriver.selectOption(LocatorType.XPATH, customerDropDownXpath(), customerName);
 		SeleniumDriver.clickElementByXpath(loginButtonXpath());
 		 
 		return new Login(seleniumDriver);
