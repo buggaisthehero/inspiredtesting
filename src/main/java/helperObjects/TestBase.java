@@ -8,7 +8,6 @@ import java.util.Properties;
 import enummerables.Enums;
 import enummerables.Enums.BrowserTypes;
 import enummerables.Enums.LoggingType;
-import readInputData.ExcelWorkbook;
 import utilities.AppConfig;
 import utilities.SeleniumDriver;
 
@@ -23,10 +22,6 @@ public class TestBase
 	protected static AppConfig  appConfig = new AppConfig();;
 	protected Properties configFile;
 	protected static FileInputStream inputStream;
-	protected static ExcelWorkbook excelWorkbook = new ExcelWorkbook();;
-
-	
-	
     protected static TestData testData;
 	protected static List<TestData> testDataList = new ArrayList<TestData>();
 	protected static TestResult testResult;
@@ -48,9 +43,6 @@ public class TestBase
 	{
 		try
 		{
-		    
-			loadTestDataList(workingDir + appConfig.getUsersInputFile());
-			
         	switch(browserType)
         	{
         		case Chrome:
@@ -92,26 +84,6 @@ public class TestBase
 			throw(e);
 		}
 	}
-	
-    public static boolean loadTestDataList(String inputFile)
-    {
-        try
-        {
-            if(testDataList.isEmpty())
-            {
-                testDataList = excelWorkbook.ReadExcelWorkbook(inputFile);
-                return true;
-            }
-            else 
-            	return true;
-        
-        }
-        catch(Exception e)
-        {
-        	logger.printLog(Enums.LoggingType.ERROR, "ReadExcelWorkbook() " + e.getMessage());
-            return false;
-        }
-    }
     
 	public static void closeBrowser()
 	{
