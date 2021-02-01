@@ -47,7 +47,7 @@ public class CustomerActions extends TestBase {
 	}
 	  
     @SuppressWarnings("static-access")
-	@Test(enabled=false)
+	@Test
     public void testDepositFirstAccount() throws Exception 
     {
     	
@@ -75,7 +75,7 @@ public class CustomerActions extends TestBase {
     }
     
     @SuppressWarnings("static-access")
-	@Test(enabled=false)
+	@Test
     public void testDepositAllAcounts() throws Exception 
     {
     	String homePageTitle = "Protractor practice website - Banking App";
@@ -106,7 +106,7 @@ public class CustomerActions extends TestBase {
     }
     
     @SuppressWarnings("static-access")
-	@Test(enabled=false)
+	@Test
     public void testDepositAndWithdrawl() throws Exception 
     {
     	String homePageTitle = "Protractor practice website - Banking App";
@@ -196,7 +196,7 @@ public class CustomerActions extends TestBase {
 			 	 
 			 	  welcome.viewTransactions();
 			 	  transactions.sortByDate();
-			 	  String date = transactions.getDateTime();
+//			 	  String date = transactions.getDateTime();
 			 	  String amount = transactions.getAmount();
 			 	  String transactionType = transactions.getTransactionType();
 			 	 
@@ -212,7 +212,7 @@ public class CustomerActions extends TestBase {
 			 	  Assert.assertEquals(message, "Transaction successful");
 			 	  welcome.viewTransactions();
 			 	  transactions.sortByDate();
-			 	  date = transactions.getDateTime();
+//			 	  date = transactions.getDateTime();
 			 	  amount = transactions.getAmount();
 			 	  transactionType = transactions.getTransactionType();
 			 	  newAccBalance = newAccBalance - 31459;
