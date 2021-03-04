@@ -52,7 +52,7 @@ public class CustomerActions extends TestBase {
 	 	  
 	 	  String originalTitle = SeleniumDriver.getPageTitle();
           Assert.assertEquals(originalTitle, homePageTitle);
-          screenshot.takeSnapShot(SeleniumDriver.GetWebDriver(), "screenshots//Home"+timestamp.getTime()+".png"); 
+          screenshot.takeSnapShot(SeleniumDriver.GetWebDriver(), "screenshots//Home_"+timestamp.getTime()+"_.png"); 
          
 	 	  homePage.clickCustomerLoginButton();
 	 	  login.loginCustomer("Hermoine Granger");
@@ -67,7 +67,7 @@ public class CustomerActions extends TestBase {
     }
     
     @SuppressWarnings("static-access")
-	@Test
+	@Test(enabled=false)
     public void testDepositAllAcounts() throws Exception 
     {
     	String homePageTitle = "Protractor practice website - Banking App";
@@ -98,7 +98,7 @@ public class CustomerActions extends TestBase {
     }
     
     @SuppressWarnings("static-access")
-	@Test
+    @Test(enabled=false)
     public void testDepositAndWithdrawl() throws Exception 
     {
     	String homePageTitle = "Protractor practice website - Banking App";
@@ -152,7 +152,7 @@ public class CustomerActions extends TestBase {
     }
     
     @SuppressWarnings("static-access")
-	@Test
+    @Test(enabled=false)
     public void testDepositAndWithdrawlJSON() throws Exception 
     {
         try
